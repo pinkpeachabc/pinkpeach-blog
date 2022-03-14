@@ -173,7 +173,7 @@ page:
 # Post
 post:
   # per_page: 10
-  # reading_time: false
+  # # reading_time: false
   # reading_time:
   #   wpm: 150
   #   text: ":words words in :minutes min"
@@ -387,7 +387,23 @@ pwa:
   #     - name: json
   #       strategy: cacheFirst
   #       regex: your_data_prefix/.*\\.json
-
+  workbox:
+    module_path_prefix: https://g.alicdn.com/kg/workbox/3.6.3/
+    expire: 0
+    name: sw.js
+    rules:
+      # 使用 staleWhileRevalidate 策略缓存 jsdelivr 请求
+      - name: jsdelivr
+        strategy: staleWhileRevalidate
+        regex: https://cdn\\.jsdelivr\\.net
+      # 使用 cacheFirst 策略缓存静态资源
+      - name: theme
+        strategy: cacheFirst
+        regex: /.*\\.(?:js|css|woff2|png|jpg|gif)l;/span>
+      # 使用 cacheFirst 策略缓存 json 文件
+      - name: json
+        strategy: cacheFirst
+        regex: your_data_prefix/.*\\.json
   # manifest.json
   # manifest:
   #   short_name:
@@ -433,10 +449,13 @@ plugins:
   # In general, script or style depends on their ext name.
   # - xxx.css
   # - xxx.jss
-  - https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js # 卜蒜子统计
+  - https://cdn.jsdelivr.net/gh/pinkpeachabc/cdn/js/busuanzi.pure.mini.js # 卜蒜子统计
   - https://cdn.staticfile.org/clipboard.js/2.0.10/clipboard.min.js # 剪贴板
   - //sdk.jinrishici.com/v2/browser/jinrishici.js # 今日诗词
   - https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js # Waline评论
+  - //cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js
+  - static/css/APlayer.min.css
+  - static/js/APlayer.min.js
   # Dynamic inject html snippet
   # - position: # sidebar | post | page | comments | avatar | head_begin | head_end | body_begin | body_end
   # HTML code
@@ -460,9 +479,20 @@ plugins:
       <script>
         Waline({
           el: '#waline',
-          serverURL: 'https://cworld-blog.vercel.app',
+          serverURL: 'https://blog-comment-two.vercel.app',
           locale: {placeholder:'欢迎评论。(填写邮箱可在被回复时收到邮件提醒，登录非必须)'},
           visitor: true,
         });
       </script>
       <link href="static/css/comment.min.css" rel="stylesheet">
+  # 音乐
+  - position: sidebar
+    template: |
+      <meting-js
+        server="netease"
+        type="playlist"
+        mini="true"
+        volume="0.4"
+        theme="#2196f3"
+        id="5470025181">
+      </meting-js>

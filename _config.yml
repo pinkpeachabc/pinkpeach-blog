@@ -104,9 +104,7 @@ theme: inside
 deploy:
   type: git
   repository:
-    # github: git@github.com:pinkpeachabc/pinkpeachabc.github.io.git
-    github: git@github.com:pinkpeachabc/pinkpeach-blog.git
-    # hexo: root@47.94.158.80:/home/git/hexoBlog
+    github: git@github.com:pinkpeachabc/pinkpeachabc.github.io.git
   branch: master
 # Live2D
 ## https://github.com/EYHN/hexo-helper-live2d
@@ -130,3 +128,12 @@ live2d:
     vOffset: -50
   mobile:
     show: false
+# rss
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+# 音乐播放器
+aplayer:
+  asset_inject: false
+  meting: true

@@ -456,6 +456,7 @@ plugins:
   - //cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js
   - static/css/APlayer.min.css
   - static/js/APlayer.min.js
+  - //cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
   # Dynamic inject html snippet
   # - position: # sidebar | post | page | comments | avatar | head_begin | head_end | body_begin | body_end
   # HTML code

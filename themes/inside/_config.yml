@@ -101,7 +101,8 @@ profile:
   # You can set Avatar URL directly
   avatar: "https://cdn.jsdelivr.net/gh/pinkpeachabc/images/Blog-imgs/logo.png"
 
-  bio: "Life is sad at times,but it is up to you to make your own life happy."
+  # bio: "Life is sad at times,but it is up to you to make your own life happy."
+  bio: ""
 # Sidebar navigation links
 menu:
   🏠 Home: /
@@ -457,6 +458,9 @@ plugins:
   - static/css/APlayer.min.css
   - static/js/APlayer.min.js
   - //cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
+  - https://cdn.jsdelivr.net/gh/pinkpeachabc/cdn/js/typed.min.js
+  - https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js
+  - static/js/typed.js
   # Dynamic inject html snippet
   # - position: # sidebar | post | page | comments | avatar | head_begin | head_end | body_begin | body_end
   # HTML code
